@@ -26,7 +26,6 @@ namespace space_bases
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // When clicked loads in the grid the list of the own rocket models
             var rockets = db.Rockets.ToList();
             OutputGrid.DataSource = rockets;
         }
@@ -68,8 +67,58 @@ namespace space_bases
 
         private void DevelopRocketButton_Click(object sender, EventArgs e)
         {
-            // When clicked a dialog is shown to insert the rocket data
             this.mainWindow.loadInputDialog(new RocketInputDialog(db, mainWindow));
+        }
+
+        private void DevelopEngineButton_Click(object sender, EventArgs e)
+        {
+            this.mainWindow.loadInputDialog(new EngineInputDialog(db, mainWindow));
+        }
+
+        private void ProduceRocketButton_Click(object sender, EventArgs e)
+        {
+            var RocketName = ProduceRocketField.Text;
+            if (this.db.Rockets.ToList().Select(r => r.RocketName).Contains(RocketName))
+            {
+                var rocket = db.Rockets.Where(r => r.RocketName == RocketName).First();
+                if (rocket.AgencyAcronym == this.mainWindow.Agency.Acronym)
+                {
+                    var previousSn = db.ProducedRockets.Where(pr => pr.RocketName == RocketName).ToList().OrderByDescending(pr => pr.Sn).First().Sn;
+                    var produced_rocket = new ProducedRocket
+                    {
+                        RocketName = RocketName,
+                        Sn = previousSn + 1,
+                        ProductionDate = DateTime.Now.Date,
+                        FlightsExecuted = 0
+                    };
+                    this.db.ProducedRockets.Add(produced_rocket);
+
+                    try
+                    {
+                        this.db.SaveChanges();
+                        MessageBox.Show("Rocket produced", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.db.ProducedRockets.Remove(produced_rocket);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Can't produce a rocket that's not yours", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Rocket not existing", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void LaunchesButton_Click(object sender, EventArgs e)
+        {
+            this.mainWindow.loadLaunchPage();
         }
     }
 }

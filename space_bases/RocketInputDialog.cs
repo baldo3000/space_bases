@@ -66,16 +66,6 @@ namespace space_bases
                 };
                 db.Rockets.Add(rocket);
 
-                /*try
-                {
-                    this.db.SaveChanges();
-                    // this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Errore: " + ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }*/
-
                 var power1 = new Power
                 {
                     RocketName = RocketName,
@@ -110,7 +100,7 @@ namespace space_bases
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Errore: " + ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.db.Rockets.Remove(rocket);
                     this.db.Powers.Remove(power1);
                     if (Engine2 != "")
@@ -125,7 +115,7 @@ namespace space_bases
             }
             else
             {
-                MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

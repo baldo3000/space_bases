@@ -22,5 +22,22 @@ namespace space_bases
             this.mainWindow = mainWindow;
             InitializeComponent();
         }
+
+        private void BookedLaunchesButton_Click(object sender, EventArgs e)
+        {
+            var launches = db.Launches.Where(l => l.BuyerAgencyAcronym != null).ToList();
+            OutputGrid.DataSource = launches;
+        }
+
+        private void ScheduledLaunchesButton_Click(object sender, EventArgs e)
+        {
+            var launches = db.Launches.Where(l => l.BuyerAgencyAcronym == null).ToList();
+            OutputGrid.DataSource = launches;
+        }
+
+        private void HomeButton_Click(object sender, EventArgs e)
+        {
+            this.mainWindow.loadHomePage();
+        }
     }
 }

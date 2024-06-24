@@ -37,9 +37,12 @@
             MyEnginesButton = new Button();
             DiscoverGroupBox = new GroupBox();
             DevelopGroupBox = new GroupBox();
+            ProduceRocketField = new TextBox();
+            ProduceRocketButton = new Button();
             DevelopEngineButton = new Button();
             DevelopRocketButton = new Button();
             OutputGridLabel = new Label();
+            LaunchesButton = new Button();
             ((System.ComponentModel.ISupportInitialize)OutputGrid).BeginInit();
             DiscoverGroupBox.SuspendLayout();
             DevelopGroupBox.SuspendLayout();
@@ -137,14 +140,34 @@
             // DevelopGroupBox
             // 
             DevelopGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            DevelopGroupBox.Controls.Add(ProduceRocketField);
+            DevelopGroupBox.Controls.Add(ProduceRocketButton);
             DevelopGroupBox.Controls.Add(DevelopEngineButton);
             DevelopGroupBox.Controls.Add(DevelopRocketButton);
-            DevelopGroupBox.Location = new Point(453, 12);
+            DevelopGroupBox.Location = new Point(519, 12);
             DevelopGroupBox.Name = "DevelopGroupBox";
-            DevelopGroupBox.Size = new Size(315, 209);
+            DevelopGroupBox.Size = new Size(249, 118);
             DevelopGroupBox.TabIndex = 8;
             DevelopGroupBox.TabStop = false;
             DevelopGroupBox.Text = "Develop";
+            // 
+            // ProduceRocketField
+            // 
+            ProduceRocketField.Location = new Point(129, 23);
+            ProduceRocketField.Name = "ProduceRocketField";
+            ProduceRocketField.PlaceholderText = "Insert rocket name";
+            ProduceRocketField.Size = new Size(111, 23);
+            ProduceRocketField.TabIndex = 3;
+            // 
+            // ProduceRocketButton
+            // 
+            ProduceRocketButton.Location = new Point(129, 51);
+            ProduceRocketButton.Name = "ProduceRocketButton";
+            ProduceRocketButton.Size = new Size(111, 23);
+            ProduceRocketButton.TabIndex = 2;
+            ProduceRocketButton.Text = "Produce Rocket";
+            ProduceRocketButton.UseVisualStyleBackColor = true;
+            ProduceRocketButton.Click += ProduceRocketButton_Click;
             // 
             // DevelopEngineButton
             // 
@@ -154,6 +177,7 @@
             DevelopEngineButton.TabIndex = 1;
             DevelopEngineButton.Text = "New Engine";
             DevelopEngineButton.UseVisualStyleBackColor = true;
+            DevelopEngineButton.Click += DevelopEngineButton_Click;
             // 
             // DevelopRocketButton
             // 
@@ -174,6 +198,16 @@
             OutputGridLabel.TabIndex = 9;
             OutputGridLabel.Text = "Output:";
             // 
+            // LaunchesButton
+            // 
+            LaunchesButton.Location = new Point(359, 34);
+            LaunchesButton.Name = "LaunchesButton";
+            LaunchesButton.Size = new Size(83, 23);
+            LaunchesButton.TabIndex = 10;
+            LaunchesButton.Text = "Launches";
+            LaunchesButton.UseVisualStyleBackColor = true;
+            LaunchesButton.Click += LaunchesButton_Click;
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -181,6 +215,7 @@
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(800, 450);
+            Controls.Add(LaunchesButton);
             Controls.Add(OutputGridLabel);
             Controls.Add(DevelopGroupBox);
             Controls.Add(DiscoverGroupBox);
@@ -190,6 +225,7 @@
             ((System.ComponentModel.ISupportInitialize)OutputGrid).EndInit();
             DiscoverGroupBox.ResumeLayout(false);
             DevelopGroupBox.ResumeLayout(false);
+            DevelopGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -208,5 +244,8 @@
         private Button DevelopEngineButton;
         private Button DevelopRocketButton;
         private Label OutputGridLabel;
+        private TextBox ProduceRocketField;
+        private Button ProduceRocketButton;
+        private Button LaunchesButton;
     }
 }
