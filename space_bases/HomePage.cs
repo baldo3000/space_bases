@@ -1,4 +1,5 @@
-﻿using space_bases.SpaceBases;
+﻿using Google.Protobuf.Collections;
+using space_bases.SpaceBases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,9 +62,14 @@ namespace space_bases
 
         private void MyProducedRocketsButton_Click(object sender, EventArgs e)
         {
-            var rockets = db.Rockets.Where(r => r.AgencyAcronym == this.mainWindow.Agency.Acronym).ToList();
-            var produced_rockets = db.ProducedRockets.Where(pr => rockets.Any(r => r.RocketName == pr.RocketName)).ToList();
+            var produced_rockets = db.ProducedRockets.Where(pr => pr.RocketNameNavigation.AgencyAcronym == this.mainWindow.Agency.Acronym).ToList();
             OutputGrid.DataSource = produced_rockets;
+        }
+
+        private void DevelopRocketButton_Click(object sender, EventArgs e)
+        {
+            // When clicked a dialog is shown to insert the rocket data
+            this.mainWindow.loadInputDialog(new RocketInputDialog(db, mainWindow));
         }
     }
 }

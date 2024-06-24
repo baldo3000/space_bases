@@ -45,7 +45,6 @@ namespace space_bases
             var agency = db.Agencies.Where(a => a.Email == EmailField.Text && a.Password == PasswordField.Text).FirstOrDefault();
             if (agency != null)
             {
-                MessageBox.Show("Accesso effettuato con successo.", "Successo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //switches to home page
                 this.mainWindow.Agency = agency;
                 this.mainWindow.loadHomePage();

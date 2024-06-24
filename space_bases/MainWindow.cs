@@ -4,7 +4,7 @@ namespace space_bases
 {
     public partial class MainWindow : Form
     {
-        private static SpaceBasesContext db;
+        private SpaceBasesContext db;
         private AdminPage adminPage;
         private HomePage homePage;
         private LoginPage loginPage;
@@ -40,6 +40,14 @@ namespace space_bases
             child.TopMost = true;
             FormPanel.Controls.Clear();
             FormPanel.Controls.Add(child);
+            child.Show();
+        }
+
+        public void loadInputDialog(Form child)
+        {
+            child.FormBorderStyle = FormBorderStyle.FixedDialog;
+            child.TopLevel = true;
+            child.TopMost = true;
             child.Show();
         }
 

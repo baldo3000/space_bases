@@ -41,6 +41,7 @@
             EmailField.Name = "EmailField";
             EmailField.Size = new Size(116, 23);
             EmailField.TabIndex = 0;
+            EmailField.Text = "info@spacex.com";
             EmailField.TextChanged += textBox1_TextChanged;
             // 
             // PasswordField
@@ -49,6 +50,7 @@
             PasswordField.Name = "PasswordField";
             PasswordField.Size = new Size(116, 23);
             PasswordField.TabIndex = 1;
+            PasswordField.Text = "pass1234";
             PasswordField.TextChanged += PasswordField_TextChanged;
             // 
             // EmailLabel
