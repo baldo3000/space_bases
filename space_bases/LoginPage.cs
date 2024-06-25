@@ -197,5 +197,19 @@ namespace space_bases
                 MessageBox.Show("All fields are required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void AdminLoginButton_Click(object sender, EventArgs e)
+        {
+            var Password = AdminPasswordField.Text;
+
+            if (Password == "elonmusk")
+            {
+                this.mainWindow.loadAdminPage();
+            }
+            else
+            {
+                MessageBox.Show("Wrong password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

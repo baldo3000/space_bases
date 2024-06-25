@@ -163,6 +163,7 @@
             AdminLoginButton.TabIndex = 4;
             AdminLoginButton.Text = "Login";
             AdminLoginButton.UseVisualStyleBackColor = true;
+            AdminLoginButton.Click += AdminLoginButton_Click;
             // 
             // AdminPasswordField
             // 
