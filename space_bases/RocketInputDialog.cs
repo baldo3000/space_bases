@@ -65,6 +65,7 @@ namespace space_bases
                     AgencyAcronym = AgencyAcronym
                 };
                 db.Rockets.Add(rocket);
+                this.mainWindow.Agency.SpaceAgency = true;
 
                 var power1 = new Power
                 {

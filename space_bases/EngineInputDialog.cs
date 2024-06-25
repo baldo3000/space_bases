@@ -46,6 +46,7 @@ namespace space_bases
                     AgencyAcronym = AgencyAcronym
                 };
                 db.Engines.Add(engine);
+                this.mainWindow.Agency.SpaceAgency = true;
 
                 try
                 {

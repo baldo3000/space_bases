@@ -78,7 +78,6 @@
             // 
             OxidizerField.Location = new Point(219, 77);
             OxidizerField.Name = "OxidizerField";
-            OxidizerField.PlaceholderText = "Insert oxidizer type";
             OxidizerField.Size = new Size(120, 23);
             OxidizerField.TabIndex = 21;
             // 
