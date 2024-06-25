@@ -64,5 +64,15 @@ namespace space_bases
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IDLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
