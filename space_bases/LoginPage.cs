@@ -74,5 +74,60 @@ namespace space_bases
         {
 
         }
+
+        private void RepresentativeRegisterButton_Click(object sender, EventArgs e)
+        {
+            var ID = IDField.Text;
+            var Name = RNameField.Text;
+            var Surname = RSurnameField.Text;
+            var Phone = (int)PhoneField.Value;
+            var City = RCityField.Text;
+            var Email = REmailField.Text;
+            var Birthday = BirthdayDate.Value;
+
+            if (ID != "" && Name != "" && Surname != "" && City != "" && Email != "")
+            {
+                if (this.db.Representatives.Where(r => r.Id == ID).ToList().Any())
+                {
+                    MessageBox.Show("Representative already registered", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var representative = new Representative
+                {
+                    Id = ID,
+                    Name = Name,
+                    Surname = Surname,
+                    Phone = Phone,
+                    City = City,
+                    Email = Email,
+                    Birthday = Birthday
+                };
+                this.db.Representatives.Add(representative);
+
+                try
+                {
+                    this.db.SaveChanges();
+                    MessageBox.Show("Representative added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    IDField.Text = "";
+                    RNameField.Text = "";
+                    RSurnameField.Text = "";
+                    PhoneField.Value = 0;
+                    RCityField.Text = "";
+                    REmailField.Text = "";
+                    BirthdayDate.Value = DateTime.Now;
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.db.Representatives.Remove(representative);
+                }
+                
+               
+            }
+            else
+            {
+                MessageBox.Show("All fields are required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

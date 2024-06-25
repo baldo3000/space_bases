@@ -40,6 +40,9 @@
             AdminPasswordLabel = new Label();
             RegisterGroupBox = new GroupBox();
             NewRepresentativeGroupBox = new GroupBox();
+            PhoneField = new NumericUpDown();
+            IDLabel = new Label();
+            IDField = new TextBox();
             BirthdayLabel = new Label();
             REmailLabel = new Label();
             REmailField = new TextBox();
@@ -48,11 +51,10 @@
             RepresentativeRegisterButton = new Button();
             RCityField = new TextBox();
             PhoneLabel = new Label();
-            PhoneField = new TextBox();
             RSurnameLabel = new Label();
             RSurnameField = new TextBox();
             RNameLabel = new Label();
-            textBox4 = new TextBox();
+            RNameField = new TextBox();
             NewAgencyGroupBox = new GroupBox();
             RIDLabel = new Label();
             RIDField = new TextBox();
@@ -71,12 +73,11 @@
             APasswordLabel = new Label();
             AgencyRegisterButton = new Button();
             APasswordField = new TextBox();
-            IDLabel = new Label();
-            IDField = new TextBox();
             LoginGroupBox.SuspendLayout();
             AdminLoginGroupBox.SuspendLayout();
             RegisterGroupBox.SuspendLayout();
             NewRepresentativeGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PhoneField).BeginInit();
             NewAgencyGroupBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -193,6 +194,7 @@
             // 
             // NewRepresentativeGroupBox
             // 
+            NewRepresentativeGroupBox.Controls.Add(PhoneField);
             NewRepresentativeGroupBox.Controls.Add(IDLabel);
             NewRepresentativeGroupBox.Controls.Add(IDField);
             NewRepresentativeGroupBox.Controls.Add(BirthdayLabel);
@@ -203,17 +205,40 @@
             NewRepresentativeGroupBox.Controls.Add(RepresentativeRegisterButton);
             NewRepresentativeGroupBox.Controls.Add(RCityField);
             NewRepresentativeGroupBox.Controls.Add(PhoneLabel);
-            NewRepresentativeGroupBox.Controls.Add(PhoneField);
             NewRepresentativeGroupBox.Controls.Add(RSurnameLabel);
             NewRepresentativeGroupBox.Controls.Add(RSurnameField);
             NewRepresentativeGroupBox.Controls.Add(RNameLabel);
-            NewRepresentativeGroupBox.Controls.Add(textBox4);
+            NewRepresentativeGroupBox.Controls.Add(RNameField);
             NewRepresentativeGroupBox.Location = new Point(326, 22);
             NewRepresentativeGroupBox.Name = "NewRepresentativeGroupBox";
             NewRepresentativeGroupBox.Size = new Size(272, 296);
             NewRepresentativeGroupBox.TabIndex = 11;
             NewRepresentativeGroupBox.TabStop = false;
             NewRepresentativeGroupBox.Text = "New representative";
+            // 
+            // PhoneField
+            // 
+            PhoneField.Location = new Point(17, 176);
+            PhoneField.Maximum = new decimal(new int[] { -727379969, 232, 0, 0 });
+            PhoneField.Name = "PhoneField";
+            PhoneField.Size = new Size(114, 23);
+            PhoneField.TabIndex = 21;
+            // 
+            // IDLabel
+            // 
+            IDLabel.AutoSize = true;
+            IDLabel.Location = new Point(62, 25);
+            IDLabel.Name = "IDLabel";
+            IDLabel.Size = new Size(21, 15);
+            IDLabel.TabIndex = 20;
+            IDLabel.Text = "ID:";
+            // 
+            // IDField
+            // 
+            IDField.Location = new Point(15, 43);
+            IDField.Name = "IDField";
+            IDField.Size = new Size(116, 23);
+            IDField.TabIndex = 19;
             // 
             // BirthdayLabel
             // 
@@ -264,6 +289,7 @@
             RepresentativeRegisterButton.TabIndex = 9;
             RepresentativeRegisterButton.Text = "Register";
             RepresentativeRegisterButton.UseVisualStyleBackColor = true;
+            RepresentativeRegisterButton.Click += RepresentativeRegisterButton_Click;
             // 
             // RCityField
             // 
@@ -280,13 +306,6 @@
             PhoneLabel.Size = new Size(44, 15);
             PhoneLabel.TabIndex = 13;
             PhoneLabel.Text = "Phone:";
-            // 
-            // PhoneField
-            // 
-            PhoneField.Location = new Point(15, 176);
-            PhoneField.Name = "PhoneField";
-            PhoneField.Size = new Size(116, 23);
-            PhoneField.TabIndex = 12;
             // 
             // RSurnameLabel
             // 
@@ -313,12 +332,12 @@
             RNameLabel.TabIndex = 8;
             RNameLabel.Text = "Name:";
             // 
-            // textBox4
+            // RNameField
             // 
-            textBox4.Location = new Point(15, 88);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(116, 23);
-            textBox4.TabIndex = 6;
+            RNameField.Location = new Point(15, 88);
+            RNameField.Name = "RNameField";
+            RNameField.Size = new Size(116, 23);
+            RNameField.TabIndex = 6;
             // 
             // NewAgencyGroupBox
             // 
@@ -483,22 +502,6 @@
             APasswordField.Size = new Size(116, 23);
             APasswordField.TabIndex = 6;
             // 
-            // IDLabel
-            // 
-            IDLabel.AutoSize = true;
-            IDLabel.Location = new Point(62, 25);
-            IDLabel.Name = "IDLabel";
-            IDLabel.Size = new Size(21, 15);
-            IDLabel.TabIndex = 20;
-            IDLabel.Text = "ID:";
-            // 
-            // IDField
-            // 
-            IDField.Location = new Point(15, 43);
-            IDField.Name = "IDField";
-            IDField.Size = new Size(116, 23);
-            IDField.TabIndex = 19;
-            // 
             // LoginPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -517,6 +520,7 @@
             RegisterGroupBox.ResumeLayout(false);
             NewRepresentativeGroupBox.ResumeLayout(false);
             NewRepresentativeGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PhoneField).EndInit();
             NewAgencyGroupBox.ResumeLayout(false);
             NewAgencyGroupBox.PerformLayout();
             ResumeLayout(false);
@@ -544,12 +548,11 @@
         private Label IDLabel;
         private Label RNameLabel;
         private Button RepresentativeRegisterButton;
-        private TextBox textBox4;
+        private TextBox RNameField;
         private GroupBox NewAgencyGroupBox;
         private MonthCalendar CalendarDate;
         private DateTimePicker BirthdayDate;
         private Label PhoneLabel;
-        private TextBox PhoneField;
         private Label RSurnameLabel;
         private TextBox RSurnameField;
         private Label BirthdayLabel;
@@ -570,5 +573,6 @@
         private Label FoundationDateLabel;
         private DateTimePicker FoundationDate;
         private TextBox IDField;
+        private NumericUpDown PhoneField;
     }
 }
