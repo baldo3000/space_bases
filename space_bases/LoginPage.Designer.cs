@@ -37,7 +37,7 @@
             // 
             // EmailField
             // 
-            EmailField.Location = new Point(345, 175);
+            EmailField.Location = new Point(342, 175);
             EmailField.Name = "EmailField";
             EmailField.Size = new Size(116, 23);
             EmailField.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // PasswordField
             // 
-            PasswordField.Location = new Point(345, 239);
+            PasswordField.Location = new Point(342, 239);
             PasswordField.Name = "PasswordField";
             PasswordField.Size = new Size(116, 23);
             PasswordField.TabIndex = 1;
@@ -56,7 +56,7 @@
             // EmailLabel
             // 
             EmailLabel.AutoSize = true;
-            EmailLabel.Location = new Point(384, 157);
+            EmailLabel.Location = new Point(381, 157);
             EmailLabel.Name = "EmailLabel";
             EmailLabel.Size = new Size(39, 15);
             EmailLabel.TabIndex = 2;
@@ -66,7 +66,7 @@
             // PasswordLabel
             // 
             PasswordLabel.AutoSize = true;
-            PasswordLabel.Location = new Point(375, 221);
+            PasswordLabel.Location = new Point(370, 221);
             PasswordLabel.Name = "PasswordLabel";
             PasswordLabel.Size = new Size(60, 15);
             PasswordLabel.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             // LoginButton
             // 
-            LoginButton.Location = new Point(345, 284);
+            LoginButton.Location = new Point(342, 284);
             LoginButton.Name = "LoginButton";
             LoginButton.Size = new Size(116, 23);
             LoginButton.TabIndex = 4;

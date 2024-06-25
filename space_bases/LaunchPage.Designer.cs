@@ -34,8 +34,12 @@
             ScheduledLaunchesButton = new Button();
             BookedLaunchesButton = new Button();
             HomeButton = new Button();
+            LaunchesGroupBox = new GroupBox();
+            BuyLaunchbutton = new Button();
+            ScheduleLaunchButton = new Button();
             ((System.ComponentModel.ISupportInitialize)OutputGrid).BeginInit();
             DiscoverGroupBox.SuspendLayout();
+            LaunchesGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // OutputGrid
@@ -101,11 +105,43 @@
             HomeButton.UseVisualStyleBackColor = true;
             HomeButton.Click += HomeButton_Click;
             // 
+            // LaunchesGroupBox
+            // 
+            LaunchesGroupBox.Controls.Add(BuyLaunchbutton);
+            LaunchesGroupBox.Controls.Add(ScheduleLaunchButton);
+            LaunchesGroupBox.Location = new Point(498, 12);
+            LaunchesGroupBox.Name = "LaunchesGroupBox";
+            LaunchesGroupBox.Size = new Size(270, 118);
+            LaunchesGroupBox.TabIndex = 13;
+            LaunchesGroupBox.TabStop = false;
+            LaunchesGroupBox.Text = "Launches";
+            // 
+            // BuyLaunchbutton
+            // 
+            BuyLaunchbutton.Location = new Point(6, 52);
+            BuyLaunchbutton.Name = "BuyLaunchbutton";
+            BuyLaunchbutton.Size = new Size(133, 24);
+            BuyLaunchbutton.TabIndex = 3;
+            BuyLaunchbutton.Text = "Buy launch";
+            BuyLaunchbutton.UseVisualStyleBackColor = true;
+            BuyLaunchbutton.Click += BuyLaunchbutton_Click;
+            // 
+            // ScheduleLaunchButton
+            // 
+            ScheduleLaunchButton.Location = new Point(6, 22);
+            ScheduleLaunchButton.Name = "ScheduleLaunchButton";
+            ScheduleLaunchButton.Size = new Size(133, 24);
+            ScheduleLaunchButton.TabIndex = 2;
+            ScheduleLaunchButton.Text = "Schedule launch";
+            ScheduleLaunchButton.UseVisualStyleBackColor = true;
+            ScheduleLaunchButton.Click += ScheduleLaunchButton_Click;
+            // 
             // LaunchPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(LaunchesGroupBox);
             Controls.Add(HomeButton);
             Controls.Add(DiscoverGroupBox);
             Controls.Add(OutputGridLabel);
@@ -114,6 +150,7 @@
             Text = "LaunchPage";
             ((System.ComponentModel.ISupportInitialize)OutputGrid).EndInit();
             DiscoverGroupBox.ResumeLayout(false);
+            LaunchesGroupBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,5 +163,8 @@
         private Button BookedLaunchesButton;
         private Button ScheduledLaunchesButton;
         private Button HomeButton;
+        private GroupBox LaunchesGroupBox;
+        private Button BuyLaunchbutton;
+        private Button ScheduleLaunchButton;
     }
 }

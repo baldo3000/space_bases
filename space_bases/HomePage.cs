@@ -120,5 +120,96 @@ namespace space_bases
         {
             this.mainWindow.loadLaunchPage();
         }
+
+        private void MostPopularRocketButton_Click(object sender, EventArgs e)
+        {
+            /*SELECT r.rocketName, SUM(p.flightsExecuted) AS launchCount
+              FROM rockets r, produced_rockets p
+              WHERE r.rocketName = p.rocketName
+              AND r.agencyAcronym = 'SPX'
+              GROUP BY r.rocketName
+              HAVING SUM(p.flightsExecuted) = (SELECT SUM(p1.flightsExecuted)
+									FROM rockets r1, produced_rockets p1
+									WHERE r1.rocketName = p1.rocketName
+									AND r1.agencyAcronym = 'SPX'
+									GROUP BY r1.rocketName
+									ORDER BY SUM(p1.flightsExecuted) DESC
+                                    LIMIT 1);
+             */
+            var query = from r in db.Rockets
+                        join p in db.ProducedRockets on r.RocketName equals p.RocketName
+                        where r.AgencyAcronym == this.mainWindow.Agency.Acronym
+                        group p by r.RocketName into g
+                        where g.Sum(p => p.FlightsExecuted) == (from r1 in db.Rockets
+                                                                join p1 in db.ProducedRockets on r1.RocketName equals p1.RocketName
+                                                                where r1.AgencyAcronym == this.mainWindow.Agency.Acronym
+                                                                group p1 by r1.RocketName into g1
+                                                                orderby g1.Sum(p1 => p1.FlightsExecuted) descending
+                                                                select g1.Sum(p1 => p1.FlightsExecuted)).First()
+                        select new
+                        {
+                            RocketName = g.Key,
+                            LaunchCount = g.Sum(p => p.FlightsExecuted)
+                        };
+            OutputGrid.DataSource = query.ToList();
+        }
+
+        private void AgencyPaidMostButton_Click(object sender, EventArgs e)
+        {
+            /* SELECT l.buyerAgencyAcronym, l.totalSpent
+                FROM (
+                SELECT l1.sellerAgencyAcronym, l1.buyerAgencyAcronym, SUM(l1.launchCost) AS totalSpent
+                FROM launches l1
+                WHERE l1.sellerAgencyAcronym != l1.buyerAgencyAcronym
+                AND l1.buyerAgencyAcronym IS NOT NULL
+                AND l1.sellerAgencyAcronym = 'SPX'
+                GROUP BY l1.sellerAgencyAcronym, l1.buyerAgencyAcronym
+            ) AS l
+            WHERE l.totalSpent = (SELECT SUM(launchCost)
+                                    FROM launches l2
+                                    WHERE l2.sellerAgencyAcronym != l2.buyerAgencyAcronym
+                                    AND l2.sellerAgencyAcronym = 'SPX'
+                                    AND l2.buyerAgencyAcronym IS NOT NULL
+                                    GROUP BY l2.sellerAgencyAcronym, l2.buyerAgencyAcronym
+                                    ORDER BY l2.sellerAgencyAcronym, SUM(l2.launchCost) DESC
+                                    LIMIT 1);
+             */
+            var query = from l in (from l1 in db.Launches
+                                   where l1.SellerAgencyAcronym != l1.BuyerAgencyAcronym
+                                   && l1.BuyerAgencyAcronym != null
+                                   && l1.SellerAgencyAcronym == this.mainWindow.Agency.Acronym
+                                   group l1 by new { l1.SellerAgencyAcronym, l1.BuyerAgencyAcronym } into g
+                                   select new
+                                   {
+                                       g.Key.BuyerAgencyAcronym,
+                                       totalSpent = g.Sum(l => Convert.ToInt64(l.LaunchCost))
+                                   }
+                        )
+                        where l.totalSpent == (from l2 in db.Launches
+                                               where l2.SellerAgencyAcronym != l2.BuyerAgencyAcronym
+                                               && l2.SellerAgencyAcronym == this.mainWindow.Agency.Acronym
+                                               && l2.BuyerAgencyAcronym != null
+                                               group l2 by new { l2.SellerAgencyAcronym, l2.BuyerAgencyAcronym } into g
+                                               orderby g.Sum(l2 => Convert.ToInt64(l2.LaunchCost)) descending
+                                               select g.Sum(l2 => Convert.ToInt64(l2.LaunchCost))).First()
+                        select l;
+
+            OutputGrid.DataSource = query.ToList();
+
+            /*var result = db.Launches.Where(l1 => l1.SellerAgencyAcronym != l1.BuyerAgencyAcronym && l1.BuyerAgencyAcronym != null && l1.SellerAgencyAcronym == "SPX")
+            .GroupBy(l1 => new { l1.SellerAgencyAcronym, l1.BuyerAgencyAcronym })
+            .Select(g => new { g.Key.BuyerAgencyAcronym, totalSpent = g.Sum(l => Convert.ToInt64(l.LaunchCost)) })
+            .Where(l => l.totalSpent == db.Launches.Where(l2 => l2.SellerAgencyAcronym != l2.BuyerAgencyAcronym
+                && l2.SellerAgencyAcronym == "SPX"
+                && l2.BuyerAgencyAcronym != null)
+                .GroupBy(l2 => new { l2.SellerAgencyAcronym, l2.BuyerAgencyAcronym })
+                .Select(g => new { g.Key.SellerAgencyAcronym, totalSpent = g.Sum(l => Convert.ToInt64(l.LaunchCost)) })
+                .OrderByDescending(l => l.totalSpent)
+                .FirstOrDefault().totalSpent)
+            .OrderBy(l => l.BuyerAgencyAcronym)
+            .ToList();
+
+            OutputGrid.DataSource = result;*/
+        }
     }
 }

@@ -39,5 +39,15 @@ namespace space_bases
         {
             this.mainWindow.loadHomePage();
         }
+
+        private void ScheduleLaunchButton_Click(object sender, EventArgs e)
+        {
+            this.mainWindow.loadInputDialog(new ScheduleLaunchInputDialog(this.db, this.mainWindow));
+        }
+
+        private void BuyLaunchbutton_Click(object sender, EventArgs e)
+        {
+            this.mainWindow.loadInputDialog(new BuyLaunchInputDialog(this.db, this.mainWindow));
+        }
     }
 }

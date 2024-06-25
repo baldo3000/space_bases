@@ -43,9 +43,13 @@
             DevelopRocketButton = new Button();
             OutputGridLabel = new Label();
             LaunchesButton = new Button();
+            StatisticsGroupBox = new GroupBox();
+            MostPopularRocketButton = new Button();
+            AgencyPaidMostButton = new Button();
             ((System.ComponentModel.ISupportInitialize)OutputGrid).BeginInit();
             DiscoverGroupBox.SuspendLayout();
             DevelopGroupBox.SuspendLayout();
+            StatisticsGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // OutputGrid
@@ -208,6 +212,37 @@
             LaunchesButton.UseVisualStyleBackColor = true;
             LaunchesButton.Click += LaunchesButton_Click;
             // 
+            // StatisticsGroupBox
+            // 
+            StatisticsGroupBox.Controls.Add(MostPopularRocketButton);
+            StatisticsGroupBox.Controls.Add(AgencyPaidMostButton);
+            StatisticsGroupBox.Location = new Point(12, 136);
+            StatisticsGroupBox.Name = "StatisticsGroupBox";
+            StatisticsGroupBox.Size = new Size(756, 93);
+            StatisticsGroupBox.TabIndex = 11;
+            StatisticsGroupBox.TabStop = false;
+            StatisticsGroupBox.Text = "Statistics";
+            // 
+            // MostPopularRocketButton
+            // 
+            MostPopularRocketButton.Location = new Point(6, 22);
+            MostPopularRocketButton.Name = "MostPopularRocketButton";
+            MostPopularRocketButton.Size = new Size(264, 23);
+            MostPopularRocketButton.TabIndex = 3;
+            MostPopularRocketButton.Text = "My most popular rocket";
+            MostPopularRocketButton.UseVisualStyleBackColor = true;
+            MostPopularRocketButton.Click += MostPopularRocketButton_Click;
+            // 
+            // AgencyPaidMostButton
+            // 
+            AgencyPaidMostButton.Location = new Point(6, 64);
+            AgencyPaidMostButton.Name = "AgencyPaidMostButton";
+            AgencyPaidMostButton.Size = new Size(264, 23);
+            AgencyPaidMostButton.TabIndex = 2;
+            AgencyPaidMostButton.Text = "Agency that paid the most (excluding myself)";
+            AgencyPaidMostButton.UseVisualStyleBackColor = true;
+            AgencyPaidMostButton.Click += AgencyPaidMostButton_Click;
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -215,6 +250,7 @@
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(800, 450);
+            Controls.Add(StatisticsGroupBox);
             Controls.Add(LaunchesButton);
             Controls.Add(OutputGridLabel);
             Controls.Add(DevelopGroupBox);
@@ -226,6 +262,7 @@
             DiscoverGroupBox.ResumeLayout(false);
             DevelopGroupBox.ResumeLayout(false);
             DevelopGroupBox.PerformLayout();
+            StatisticsGroupBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,5 +284,8 @@
         private TextBox ProduceRocketField;
         private Button ProduceRocketButton;
         private Button LaunchesButton;
+        private GroupBox StatisticsGroupBox;
+        private Button MostPopularRocketButton;
+        private Button AgencyPaidMostButton;
     }
 }
