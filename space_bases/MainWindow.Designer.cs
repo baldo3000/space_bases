@@ -48,7 +48,7 @@
             MaximizeBox = false;
             Name = "MainWindow";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MainWindow";
+            Text = "Space Bases Database";
             ResumeLayout(false);
         }
 

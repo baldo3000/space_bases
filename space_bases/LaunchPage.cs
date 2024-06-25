@@ -23,6 +23,11 @@ namespace space_bases
             InitializeComponent();
         }
 
+        public void setActiveAgency()
+        {
+            ScheduleLaunchButton.Enabled = true;
+        }
+
         private void BookedLaunchesButton_Click(object sender, EventArgs e)
         {
             var launches = db.Launches.Where(l => l.BuyerAgencyAcronym != null).ToList();

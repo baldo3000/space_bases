@@ -11,6 +11,7 @@ namespace space_bases
         private StatisticsPage statisticsPage;
         private LaunchPage launchPage;
         private Agency agency;
+        private Boolean SpaceAgency = false;
 
         public MainWindow()
         {
@@ -58,6 +59,10 @@ namespace space_bases
 
         public void loadHomePage()
         {
+            if (this.IsSpaceAgency)
+            {
+                homePage.setActiveAgency();
+            }
             loadPage(homePage);
         }
 
@@ -73,6 +78,10 @@ namespace space_bases
 
         public void loadLaunchPage()
         {
+            if (this.IsSpaceAgency)
+            {
+                launchPage.setActiveAgency();
+            }
             loadPage(launchPage);
         }
 
@@ -80,6 +89,12 @@ namespace space_bases
         {
             get { return agency; }
             set { agency = value; }
+        }
+
+        public Boolean IsSpaceAgency
+        {
+            get { return SpaceAgency; }
+            set { SpaceAgency = value; }
         }
     }
 }

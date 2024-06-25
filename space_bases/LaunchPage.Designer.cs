@@ -128,6 +128,7 @@
             // 
             // ScheduleLaunchButton
             // 
+            ScheduleLaunchButton.Enabled = false;
             ScheduleLaunchButton.Location = new Point(6, 22);
             ScheduleLaunchButton.Name = "ScheduleLaunchButton";
             ScheduleLaunchButton.Size = new Size(133, 24);

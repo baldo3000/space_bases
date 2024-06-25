@@ -50,6 +50,7 @@ namespace space_bases
                 try
                 {
                     this.db.SaveChanges();
+                    this.mainWindow.IsSpaceAgency = true;
                     this.Close();
                 }
                 catch (Exception ex)

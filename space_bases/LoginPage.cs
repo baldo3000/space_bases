@@ -47,6 +47,7 @@ namespace space_bases
             {
                 //switches to home page
                 this.mainWindow.Agency = agency;
+                this.mainWindow.IsSpaceAgency = agency.SpaceAgency;
                 EmailField.Text = "";
                 PasswordField.Text = "";
                 this.mainWindow.loadHomePage();

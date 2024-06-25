@@ -94,6 +94,12 @@ namespace space_bases
                     MessageBox.Show("Rocket too heavy for this launchpad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                if(!Launchpad.Active)
+                {
+                    MessageBox.Show("Launchpad is not active", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 
 
                 var launch = new Launch

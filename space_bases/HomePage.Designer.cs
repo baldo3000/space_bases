@@ -99,6 +99,7 @@
             // 
             // MyRocketsButton
             // 
+            MyRocketsButton.Enabled = false;
             MyRocketsButton.Location = new Point(87, 22);
             MyRocketsButton.Name = "MyRocketsButton";
             MyRocketsButton.Size = new Size(83, 23);
@@ -109,6 +110,7 @@
             // 
             // MyProducedRocketsButton
             // 
+            MyProducedRocketsButton.Enabled = false;
             MyProducedRocketsButton.Location = new Point(123, 51);
             MyProducedRocketsButton.Name = "MyProducedRocketsButton";
             MyProducedRocketsButton.Size = new Size(139, 23);
@@ -119,6 +121,7 @@
             // 
             // MyEnginesButton
             // 
+            MyEnginesButton.Enabled = false;
             MyEnginesButton.Location = new Point(87, 80);
             MyEnginesButton.Name = "MyEnginesButton";
             MyEnginesButton.Size = new Size(83, 23);
@@ -166,6 +169,7 @@
             // 
             // ProduceRocketButton
             // 
+            ProduceRocketButton.Enabled = false;
             ProduceRocketButton.Location = new Point(129, 51);
             ProduceRocketButton.Name = "ProduceRocketButton";
             ProduceRocketButton.Size = new Size(111, 23);

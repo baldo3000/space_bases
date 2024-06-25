@@ -24,6 +24,14 @@ namespace space_bases
             InitializeComponent();
         }
 
+        public void setActiveAgency()
+        {
+            MyRocketsButton.Enabled = true;
+            MyEnginesButton.Enabled = true;
+            MyProducedRocketsButton.Enabled = true;
+            ProduceRocketButton.Enabled = true;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             var rockets = db.Rockets.ToList();
