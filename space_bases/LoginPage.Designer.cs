@@ -67,7 +67,7 @@
             ANameLabel = new Label();
             ANameField = new TextBox();
             AcronymLabel = new Label();
-            textBox2 = new TextBox();
+            AcronymField = new TextBox();
             AEmailLabel = new Label();
             AEmailField = new TextBox();
             APasswordLabel = new Label();
@@ -352,7 +352,7 @@
             NewAgencyGroupBox.Controls.Add(ANameLabel);
             NewAgencyGroupBox.Controls.Add(ANameField);
             NewAgencyGroupBox.Controls.Add(AcronymLabel);
-            NewAgencyGroupBox.Controls.Add(textBox2);
+            NewAgencyGroupBox.Controls.Add(AcronymField);
             NewAgencyGroupBox.Controls.Add(AEmailLabel);
             NewAgencyGroupBox.Controls.Add(AEmailField);
             NewAgencyGroupBox.Controls.Add(APasswordLabel);
@@ -454,12 +454,12 @@
             AcronymLabel.TabIndex = 13;
             AcronymLabel.Text = "Acronym:";
             // 
-            // textBox2
+            // AcronymField
             // 
-            textBox2.Location = new Point(22, 177);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(116, 23);
-            textBox2.TabIndex = 11;
+            AcronymField.Location = new Point(22, 177);
+            AcronymField.Name = "AcronymField";
+            AcronymField.Size = new Size(116, 23);
+            AcronymField.TabIndex = 11;
             // 
             // AEmailLabel
             // 
@@ -494,6 +494,7 @@
             AgencyRegisterButton.TabIndex = 9;
             AgencyRegisterButton.Text = "Register";
             AgencyRegisterButton.UseVisualStyleBackColor = true;
+            AgencyRegisterButton.Click += AgencyRegisterButton_Click;
             // 
             // APasswordField
             // 
@@ -563,7 +564,7 @@
         private Label ANameLabel;
         private TextBox ANameField;
         private Label AcronymLabel;
-        private TextBox textBox2;
+        private TextBox AcronymField;
         private Label RIDLabel;
         private TextBox RIDField;
         private Label HeadquarterNationLabel;

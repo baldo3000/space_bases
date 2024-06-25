@@ -116,13 +116,81 @@ namespace space_bases
                     RCityField.Text = "";
                     REmailField.Text = "";
                     BirthdayDate.Value = DateTime.Now;
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.db.Representatives.Remove(representative);
                 }
-                
-               
+
+
+            }
+            else
+            {
+                MessageBox.Show("All fields are required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void AgencyRegisterButton_Click(object sender, EventArgs e)
+        {
+            var AgencyName = ANameField.Text;
+            var Acronym = AcronymField.Text;
+            var Foundation = FoundationDate.Value;
+            var Email = AEmailField.Text;
+            var Password = APasswordField.Text;
+            var HeadquarterNation = HeadquarterNationField.Text;
+            var HeadquarterCity = HeadquarterCityField.Text;
+            var RepresentativeId = RIDField.Text;
+            var SpaceAgency = false;
+
+            if (AgencyName != "" && Acronym != "" && Email != "" && Password != "" && HeadquarterNation != "" && HeadquarterCity != "" && RepresentativeId != "")
+            {
+                if (this.db.Agencies.Where(a => a.Acronym == Acronym).ToList().Any())
+                {
+                    MessageBox.Show("Agency already registered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!this.db.Representatives.Where(r => r.Id == RepresentativeId).ToList().Any())
+                {
+                    MessageBox.Show("Representative does not exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var representative = this.db.Representatives.Where(r => r.Id == RepresentativeId).ToList().First();
+                var agency = new Agency
+                {
+                    AgencyName = AgencyName,
+                    Acronym = Acronym,
+                    FoundationDate = Foundation,
+                    Email = Email,
+                    Password = Password,
+                    HeadquarterNation = HeadquarterNation,
+                    HeadquarterCity = HeadquarterCity,
+                    RepresentativeId = RepresentativeId,
+                    SpaceAgency = SpaceAgency,
+                    Representative = representative
+                };
+                this.db.Agencies.Add(agency);
+
+                try
+                {
+                    this.db.SaveChanges();
+                    MessageBox.Show("Agency added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ANameField.Text = "";
+                    AcronymField.Text = "";
+                    FoundationDate.Value = DateTime.Now;
+                    AEmailField.Text = "";
+                    APasswordField.Text = "";
+                    HeadquarterNationField.Text = "";
+                    HeadquarterCityField.Text = "";
+                    RIDField.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.db.Agencies.Remove(agency);
+                }
             }
             else
             {
