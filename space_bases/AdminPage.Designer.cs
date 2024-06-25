@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             StatisticsGroupBox = new GroupBox();
-            MostPopularRocketButton = new Button();
-            AgencyPaidMostButton = new Button();
+            BaseNameField = new TextBox();
+            RocketLaunchedMostButton = new Button();
+            MostPopularLaunchpadButton = new Button();
+            AgencyEarnedMostButton = new Button();
             OutputGridLabel = new Label();
             OutputGrid = new DataGridView();
             DiscoverGroupBox = new GroupBox();
@@ -40,16 +42,21 @@
             BasesManagementGroupBox = new GroupBox();
             CreateBaseButton = new Button();
             CreateLaunchpadButton = new Button();
+            LaunchpadCodeField = new NumericUpDown();
             StatisticsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)OutputGrid).BeginInit();
             DiscoverGroupBox.SuspendLayout();
             BasesManagementGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)LaunchpadCodeField).BeginInit();
             SuspendLayout();
             // 
             // StatisticsGroupBox
             // 
-            StatisticsGroupBox.Controls.Add(MostPopularRocketButton);
-            StatisticsGroupBox.Controls.Add(AgencyPaidMostButton);
+            StatisticsGroupBox.Controls.Add(LaunchpadCodeField);
+            StatisticsGroupBox.Controls.Add(BaseNameField);
+            StatisticsGroupBox.Controls.Add(RocketLaunchedMostButton);
+            StatisticsGroupBox.Controls.Add(MostPopularLaunchpadButton);
+            StatisticsGroupBox.Controls.Add(AgencyEarnedMostButton);
             StatisticsGroupBox.Location = new Point(12, 136);
             StatisticsGroupBox.Name = "StatisticsGroupBox";
             StatisticsGroupBox.Size = new Size(756, 93);
@@ -57,23 +64,43 @@
             StatisticsGroupBox.TabStop = false;
             StatisticsGroupBox.Text = "Statistics";
             // 
-            // MostPopularRocketButton
+            // BaseNameField
             // 
-            MostPopularRocketButton.Location = new Point(6, 22);
-            MostPopularRocketButton.Name = "MostPopularRocketButton";
-            MostPopularRocketButton.Size = new Size(264, 23);
-            MostPopularRocketButton.TabIndex = 3;
-            MostPopularRocketButton.Text = "My most popular rocket";
-            MostPopularRocketButton.UseVisualStyleBackColor = true;
+            BaseNameField.Location = new Point(276, 64);
+            BaseNameField.Name = "BaseNameField";
+            BaseNameField.PlaceholderText = "Insert base name";
+            BaseNameField.Size = new Size(109, 23);
+            BaseNameField.TabIndex = 5;
             // 
-            // AgencyPaidMostButton
+            // RocketLaunchedMostButton
             // 
-            AgencyPaidMostButton.Location = new Point(6, 64);
-            AgencyPaidMostButton.Name = "AgencyPaidMostButton";
-            AgencyPaidMostButton.Size = new Size(264, 23);
-            AgencyPaidMostButton.TabIndex = 2;
-            AgencyPaidMostButton.Text = "Agency that paid the most (excluding myself)";
-            AgencyPaidMostButton.UseVisualStyleBackColor = true;
+            RocketLaunchedMostButton.Location = new Point(6, 63);
+            RocketLaunchedMostButton.Name = "RocketLaunchedMostButton";
+            RocketLaunchedMostButton.Size = new Size(264, 23);
+            RocketLaunchedMostButton.TabIndex = 4;
+            RocketLaunchedMostButton.Text = "Rocket launched the most from a launchpad";
+            RocketLaunchedMostButton.UseVisualStyleBackColor = true;
+            RocketLaunchedMostButton.Click += RocketLaunchedMostButton_Click;
+            // 
+            // MostPopularLaunchpadButton
+            // 
+            MostPopularLaunchpadButton.Location = new Point(6, 22);
+            MostPopularLaunchpadButton.Name = "MostPopularLaunchpadButton";
+            MostPopularLaunchpadButton.Size = new Size(264, 23);
+            MostPopularLaunchpadButton.TabIndex = 3;
+            MostPopularLaunchpadButton.Text = "Most popular launchpad";
+            MostPopularLaunchpadButton.UseVisualStyleBackColor = true;
+            MostPopularLaunchpadButton.Click += MostPopularLaunchpadButton_Click;
+            // 
+            // AgencyEarnedMostButton
+            // 
+            AgencyEarnedMostButton.Location = new Point(276, 22);
+            AgencyEarnedMostButton.Name = "AgencyEarnedMostButton";
+            AgencyEarnedMostButton.Size = new Size(264, 23);
+            AgencyEarnedMostButton.TabIndex = 2;
+            AgencyEarnedMostButton.Text = "Agency that earned the most in current year";
+            AgencyEarnedMostButton.UseVisualStyleBackColor = true;
+            AgencyEarnedMostButton.Click += AgencyEarnedMostButton_Click;
             // 
             // OutputGridLabel
             // 
@@ -169,6 +196,13 @@
             CreateLaunchpadButton.UseVisualStyleBackColor = true;
             CreateLaunchpadButton.Click += CreateLaunchpadButton_Click;
             // 
+            // LaunchpadCodeField
+            // 
+            LaunchpadCodeField.Location = new Point(391, 63);
+            LaunchpadCodeField.Name = "LaunchpadCodeField";
+            LaunchpadCodeField.Size = new Size(120, 23);
+            LaunchpadCodeField.TabIndex = 6;
+            // 
             // AdminPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -183,9 +217,11 @@
             Name = "AdminPage";
             Text = "AdminPage";
             StatisticsGroupBox.ResumeLayout(false);
+            StatisticsGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)OutputGrid).EndInit();
             DiscoverGroupBox.ResumeLayout(false);
             BasesManagementGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)LaunchpadCodeField).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,8 +229,8 @@
         #endregion
 
         private GroupBox StatisticsGroupBox;
-        private Button MostPopularRocketButton;
-        private Button AgencyPaidMostButton;
+        private Button MostPopularLaunchpadButton;
+        private Button AgencyEarnedMostButton;
         private Label OutputGridLabel;
         private DataGridView OutputGrid;
         private GroupBox DiscoverGroupBox;
@@ -209,5 +245,8 @@
         private GroupBox BasesManagementGroupBox;
         private Button CreateBaseButton;
         private Button CreateLaunchpadButton;
+        private Button RocketLaunchedMostButton;
+        private TextBox BaseNameField;
+        private NumericUpDown LaunchpadCodeField;
     }
 }
