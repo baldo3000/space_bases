@@ -33,6 +33,9 @@
             BuyLaunchButton = new Button();
             DateCalendar = new MonthCalendar();
             PayloadWeightField = new NumericUpDown();
+            RocketNameLabel = new Label();
+            PayloadWeightLabel = new Label();
+            SNLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)SnField).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PayloadWeightField).BeginInit();
             SuspendLayout();
@@ -41,7 +44,6 @@
             // 
             RocketNameField.Location = new Point(73, 27);
             RocketNameField.Name = "RocketNameField";
-            RocketNameField.PlaceholderText = "Insert rocket name";
             RocketNameField.Size = new Size(122, 23);
             RocketNameField.TabIndex = 2;
             // 
@@ -78,17 +80,48 @@
             PayloadWeightField.Size = new Size(120, 23);
             PayloadWeightField.TabIndex = 22;
             // 
+            // RocketNameLabel
+            // 
+            RocketNameLabel.AutoSize = true;
+            RocketNameLabel.Location = new Point(95, 9);
+            RocketNameLabel.Name = "RocketNameLabel";
+            RocketNameLabel.Size = new Size(79, 15);
+            RocketNameLabel.TabIndex = 24;
+            RocketNameLabel.Text = "Rocket name:";
+            // 
+            // PayloadWeightLabel
+            // 
+            PayloadWeightLabel.AutoSize = true;
+            PayloadWeightLabel.Location = new Point(89, 95);
+            PayloadWeightLabel.Name = "PayloadWeightLabel";
+            PayloadWeightLabel.Size = new Size(91, 15);
+            PayloadWeightLabel.TabIndex = 25;
+            PayloadWeightLabel.Text = "Payload weight:";
+            // 
+            // SNLabel
+            // 
+            SNLabel.AutoSize = true;
+            SNLabel.Location = new Point(93, 51);
+            SNLabel.Name = "SNLabel";
+            SNLabel.Size = new Size(83, 15);
+            SNLabel.TabIndex = 26;
+            SNLabel.Text = "Serial number:";
+            // 
             // BuyLaunchInputDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(269, 362);
+            Controls.Add(SNLabel);
+            Controls.Add(PayloadWeightLabel);
+            Controls.Add(RocketNameLabel);
             Controls.Add(PayloadWeightField);
             Controls.Add(DateCalendar);
             Controls.Add(BuyLaunchButton);
             Controls.Add(SnField);
             Controls.Add(RocketNameField);
             Name = "BuyLaunchInputDialog";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BuyLaunchInputDialog";
             ((System.ComponentModel.ISupportInitialize)SnField).EndInit();
             ((System.ComponentModel.ISupportInitialize)PayloadWeightField).EndInit();
@@ -103,5 +136,8 @@
         private Button BuyLaunchButton;
         private MonthCalendar DateCalendar;
         private NumericUpDown PayloadWeightField;
+        private Label RocketNameLabel;
+        private Label PayloadWeightLabel;
+        private Label SNLabel;
     }
 }

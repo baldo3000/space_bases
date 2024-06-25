@@ -35,21 +35,25 @@
             OxidizerField = new TextBox();
             DevelopEngineButton = new Button();
             ThrottleableField = new CheckBox();
+            EngineNameLabel = new Label();
+            FuelLabel = new Label();
+            ThrustLabel = new Label();
+            OxidizerLabel = new Label();
+            PressureLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)PressureField).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ThrustField).BeginInit();
             SuspendLayout();
             // 
             // EngineNameField
             // 
-            EngineNameField.Location = new Point(34, 24);
+            EngineNameField.Location = new Point(24, 29);
             EngineNameField.Name = "EngineNameField";
-            EngineNameField.PlaceholderText = "Insert engine name";
             EngineNameField.Size = new Size(122, 23);
             EngineNameField.TabIndex = 1;
             // 
             // PressureField
             // 
-            PressureField.Location = new Point(34, 119);
+            PressureField.Location = new Point(24, 124);
             PressureField.Maximum = new decimal(new int[] { -727379969, 232, 0, 0 });
             PressureField.Name = "PressureField";
             PressureField.Size = new Size(120, 23);
@@ -57,7 +61,7 @@
             // 
             // ThrustField
             // 
-            ThrustField.Location = new Point(34, 73);
+            ThrustField.Location = new Point(24, 78);
             ThrustField.Maximum = new decimal(new int[] { -727379969, 232, 0, 0 });
             ThrustField.Name = "ThrustField";
             ThrustField.Size = new Size(120, 23);
@@ -65,15 +69,14 @@
             // 
             // FuelField
             // 
-            FuelField.Location = new Point(209, 24);
+            FuelField.Location = new Point(219, 29);
             FuelField.Name = "FuelField";
-            FuelField.PlaceholderText = "Insert fuel type";
             FuelField.Size = new Size(120, 23);
             FuelField.TabIndex = 20;
             // 
             // OxidizerField
             // 
-            OxidizerField.Location = new Point(209, 72);
+            OxidizerField.Location = new Point(219, 77);
             OxidizerField.Name = "OxidizerField";
             OxidizerField.PlaceholderText = "Insert oxidizer type";
             OxidizerField.Size = new Size(120, 23);
@@ -81,7 +84,7 @@
             // 
             // DevelopEngineButton
             // 
-            DevelopEngineButton.Location = new Point(80, 218);
+            DevelopEngineButton.Location = new Point(79, 218);
             DevelopEngineButton.Name = "DevelopEngineButton";
             DevelopEngineButton.Size = new Size(216, 23);
             DevelopEngineButton.TabIndex = 22;
@@ -92,18 +95,68 @@
             // ThrottleableField
             // 
             ThrottleableField.AutoSize = true;
-            ThrottleableField.Location = new Point(50, 165);
+            ThrottleableField.Location = new Point(40, 170);
             ThrottleableField.Name = "ThrottleableField";
             ThrottleableField.Size = new Size(89, 19);
             ThrottleableField.TabIndex = 23;
             ThrottleableField.Text = "Throttleable";
             ThrottleableField.UseVisualStyleBackColor = true;
             // 
+            // EngineNameLabel
+            // 
+            EngineNameLabel.AutoSize = true;
+            EngineNameLabel.Location = new Point(46, 14);
+            EngineNameLabel.Name = "EngineNameLabel";
+            EngineNameLabel.Size = new Size(79, 15);
+            EngineNameLabel.TabIndex = 27;
+            EngineNameLabel.Text = "Engine name:";
+            // 
+            // FuelLabel
+            // 
+            FuelLabel.AutoSize = true;
+            FuelLabel.Location = new Point(250, 14);
+            FuelLabel.Name = "FuelLabel";
+            FuelLabel.Size = new Size(58, 15);
+            FuelLabel.TabIndex = 28;
+            FuelLabel.Text = "Fuel type:";
+            // 
+            // ThrustLabel
+            // 
+            ThrustLabel.AutoSize = true;
+            ThrustLabel.Location = new Point(64, 60);
+            ThrustLabel.Name = "ThrustLabel";
+            ThrustLabel.Size = new Size(43, 15);
+            ThrustLabel.TabIndex = 29;
+            ThrustLabel.Text = "Thrust:";
+            // 
+            // OxidizerLabel
+            // 
+            OxidizerLabel.AutoSize = true;
+            OxidizerLabel.Location = new Point(240, 60);
+            OxidizerLabel.Name = "OxidizerLabel";
+            OxidizerLabel.Size = new Size(79, 15);
+            OxidizerLabel.TabIndex = 30;
+            OxidizerLabel.Text = "Oxidizer type:";
+            // 
+            // PressureLabel
+            // 
+            PressureLabel.AutoSize = true;
+            PressureLabel.Location = new Point(32, 106);
+            PressureLabel.Name = "PressureLabel";
+            PressureLabel.Size = new Size(106, 15);
+            PressureLabel.TabIndex = 31;
+            PressureLabel.Text = "Chamber pressure:";
+            // 
             // EngineInputDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(374, 283);
+            Controls.Add(PressureLabel);
+            Controls.Add(OxidizerLabel);
+            Controls.Add(ThrustLabel);
+            Controls.Add(FuelLabel);
+            Controls.Add(EngineNameLabel);
             Controls.Add(ThrottleableField);
             Controls.Add(DevelopEngineButton);
             Controls.Add(OxidizerField);
@@ -112,6 +165,7 @@
             Controls.Add(PressureField);
             Controls.Add(EngineNameField);
             Name = "EngineInputDialog";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EngineInputDialog";
             ((System.ComponentModel.ISupportInitialize)PressureField).EndInit();
             ((System.ComponentModel.ISupportInitialize)ThrustField).EndInit();
@@ -128,5 +182,10 @@
         private TextBox OxidizerField;
         private Button DevelopEngineButton;
         private CheckBox ThrottleableField;
+        private Label EngineNameLabel;
+        private Label FuelLabel;
+        private Label ThrustLabel;
+        private Label OxidizerLabel;
+        private Label PressureLabel;
     }
 }

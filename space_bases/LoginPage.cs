@@ -47,6 +47,8 @@ namespace space_bases
             {
                 //switches to home page
                 this.mainWindow.Agency = agency;
+                EmailField.Text = "";
+                PasswordField.Text = "";
                 this.mainWindow.loadHomePage();
             }
             else
@@ -204,6 +206,7 @@ namespace space_bases
 
             if (Password == "elonmusk")
             {
+                AdminPasswordField.Text = "";
                 this.mainWindow.loadAdminPage();
             }
             else

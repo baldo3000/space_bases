@@ -36,6 +36,12 @@
             BaseNameField = new TextBox();
             LaunchpadCodeField = new NumericUpDown();
             ScheduleLaunchButton = new Button();
+            RocketNameLabel = new Label();
+            SNLabel = new Label();
+            AltitudeLabel = new Label();
+            CostLabel = new Label();
+            BaseNameLabel = new Label();
+            LaunchpadCodeLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)SnField).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CostField).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AltitudeField).BeginInit();
@@ -44,15 +50,14 @@
             // 
             // RocketNameField
             // 
-            RocketNameField.Location = new Point(31, 25);
+            RocketNameField.Location = new Point(26, 25);
             RocketNameField.Name = "RocketNameField";
-            RocketNameField.PlaceholderText = "Insert rocket name";
             RocketNameField.Size = new Size(122, 23);
             RocketNameField.TabIndex = 1;
             // 
             // SnField
             // 
-            SnField.Location = new Point(31, 65);
+            SnField.Location = new Point(26, 69);
             SnField.Maximum = new decimal(new int[] { -727379969, 232, 0, 0 });
             SnField.Name = "SnField";
             SnField.Size = new Size(120, 23);
@@ -60,14 +65,14 @@
             // 
             // DateCalendar
             // 
-            DateCalendar.Location = new Point(195, 25);
+            DateCalendar.Location = new Point(182, 25);
             DateCalendar.MaxSelectionCount = 1;
             DateCalendar.Name = "DateCalendar";
             DateCalendar.TabIndex = 12;
             // 
             // CostField
             // 
-            CostField.Location = new Point(31, 151);
+            CostField.Location = new Point(26, 157);
             CostField.Maximum = new decimal(new int[] { -727379969, 232, 0, 0 });
             CostField.Name = "CostField";
             CostField.Size = new Size(120, 23);
@@ -75,7 +80,7 @@
             // 
             // AltitudeField
             // 
-            AltitudeField.Location = new Point(31, 106);
+            AltitudeField.Location = new Point(26, 113);
             AltitudeField.Maximum = new decimal(new int[] { -727379969, 232, 0, 0 });
             AltitudeField.Name = "AltitudeField";
             AltitudeField.Size = new Size(120, 23);
@@ -83,15 +88,14 @@
             // 
             // BaseNameField
             // 
-            BaseNameField.Location = new Point(31, 189);
+            BaseNameField.Location = new Point(24, 201);
             BaseNameField.Name = "BaseNameField";
-            BaseNameField.PlaceholderText = "Insert base name";
             BaseNameField.Size = new Size(122, 23);
             BaseNameField.TabIndex = 15;
             // 
             // LaunchpadCodeField
             // 
-            LaunchpadCodeField.Location = new Point(31, 232);
+            LaunchpadCodeField.Location = new Point(26, 243);
             LaunchpadCodeField.Maximum = new decimal(new int[] { -727379969, 232, 0, 0 });
             LaunchpadCodeField.Name = "LaunchpadCodeField";
             LaunchpadCodeField.Size = new Size(120, 23);
@@ -99,7 +103,7 @@
             // 
             // ScheduleLaunchButton
             // 
-            ScheduleLaunchButton.Location = new Point(195, 230);
+            ScheduleLaunchButton.Location = new Point(182, 243);
             ScheduleLaunchButton.Name = "ScheduleLaunchButton";
             ScheduleLaunchButton.Size = new Size(227, 23);
             ScheduleLaunchButton.TabIndex = 19;
@@ -107,11 +111,71 @@
             ScheduleLaunchButton.UseVisualStyleBackColor = true;
             ScheduleLaunchButton.Click += ScheduleLaunchButton_Click;
             // 
+            // RocketNameLabel
+            // 
+            RocketNameLabel.AutoSize = true;
+            RocketNameLabel.Location = new Point(47, 9);
+            RocketNameLabel.Name = "RocketNameLabel";
+            RocketNameLabel.Size = new Size(79, 15);
+            RocketNameLabel.TabIndex = 25;
+            RocketNameLabel.Text = "Rocket name:";
+            // 
+            // SNLabel
+            // 
+            SNLabel.AutoSize = true;
+            SNLabel.Location = new Point(45, 51);
+            SNLabel.Name = "SNLabel";
+            SNLabel.Size = new Size(83, 15);
+            SNLabel.TabIndex = 26;
+            SNLabel.Text = "Serial number:";
+            // 
+            // AltitudeLabel
+            // 
+            AltitudeLabel.AutoSize = true;
+            AltitudeLabel.Location = new Point(60, 95);
+            AltitudeLabel.Name = "AltitudeLabel";
+            AltitudeLabel.Size = new Size(52, 15);
+            AltitudeLabel.TabIndex = 27;
+            AltitudeLabel.Text = "Altitude:";
+            // 
+            // CostLabel
+            // 
+            CostLabel.AutoSize = true;
+            CostLabel.Location = new Point(69, 139);
+            CostLabel.Name = "CostLabel";
+            CostLabel.Size = new Size(34, 15);
+            CostLabel.TabIndex = 28;
+            CostLabel.Text = "Cost:";
+            // 
+            // BaseNameLabel
+            // 
+            BaseNameLabel.AutoSize = true;
+            BaseNameLabel.Location = new Point(53, 183);
+            BaseNameLabel.Name = "BaseNameLabel";
+            BaseNameLabel.Size = new Size(67, 15);
+            BaseNameLabel.TabIndex = 29;
+            BaseNameLabel.Text = "Base name:";
+            // 
+            // LaunchpadCodeLabel
+            // 
+            LaunchpadCodeLabel.AutoSize = true;
+            LaunchpadCodeLabel.Location = new Point(37, 225);
+            LaunchpadCodeLabel.Name = "LaunchpadCodeLabel";
+            LaunchpadCodeLabel.Size = new Size(98, 15);
+            LaunchpadCodeLabel.TabIndex = 30;
+            LaunchpadCodeLabel.Text = "Launchpad code:";
+            // 
             // ScheduleLaunchInputDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(453, 283);
+            ClientSize = new Size(453, 292);
+            Controls.Add(LaunchpadCodeLabel);
+            Controls.Add(BaseNameLabel);
+            Controls.Add(CostLabel);
+            Controls.Add(AltitudeLabel);
+            Controls.Add(SNLabel);
+            Controls.Add(RocketNameLabel);
             Controls.Add(ScheduleLaunchButton);
             Controls.Add(LaunchpadCodeField);
             Controls.Add(BaseNameField);
@@ -121,6 +185,7 @@
             Controls.Add(SnField);
             Controls.Add(RocketNameField);
             Name = "ScheduleLaunchInputDialog";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ScheduleLaunchInputDialog";
             ((System.ComponentModel.ISupportInitialize)SnField).EndInit();
             ((System.ComponentModel.ISupportInitialize)CostField).EndInit();
@@ -140,5 +205,11 @@
         private TextBox BaseNameField;
         private NumericUpDown LaunchpadCodeField;
         private Button ScheduleLaunchButton;
+        private Label RocketNameLabel;
+        private Label SNLabel;
+        private Label AltitudeLabel;
+        private Label CostLabel;
+        private Label BaseNameLabel;
+        private Label LaunchpadCodeLabel;
     }
 }

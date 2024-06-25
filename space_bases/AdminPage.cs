@@ -119,6 +119,28 @@ namespace space_bases
                     return;
                 }
 
+                /*
+                 * WITH maxLaunches(maxLaunches) AS (
+	                SELECT COUNT(*) AS maxLaunches
+	                FROM launches l
+	                WHERE l.baseName = 'Kennedy Space Center'
+	                AND l.launchpadCode = 1
+	                AND l.buyerAgencyAcronym IS NOT NULL
+	                GROUP BY l.rocketName
+	                LIMIT 1
+                )
+                SELECT l.rocketName, l.launches
+                FROM (
+	                SELECT l2.rocketName, COUNT(*) AS launches
+                    FROM launches l2
+	                WHERE l2.baseName = 'Kennedy Space Center'
+	                AND l2.launchpadCode = 1
+	                AND l2.buyerAgencyAcronym IS NOT NULL
+	                GROUP BY l2.rocketName
+                ) AS l, maxLaunches
+                WHERE l.launches = maxLaunches.maxLaunches;
+                */
+
                 var maxLaunches = (from l in this.db.Launches
                                    where l.BaseName == BaseName && l.LaunchpadCode == LaunchpadCode && l.BuyerAgencyAcronym != null
                                    group l by l.RocketName into g

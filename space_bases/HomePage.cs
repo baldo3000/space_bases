@@ -211,5 +211,10 @@ namespace space_bases
 
             OutputGrid.DataSource = result;*/
         }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            this.mainWindow.loadLoginPage();
+        }
     }
 }

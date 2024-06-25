@@ -39,7 +39,7 @@ namespace space_bases
             var RocketName = RocketNameField.Text;
             var FueledWeight = (int)WeightField.Value;
             var Height = (int)HeightField.Value;
-            var Width = (int)WeigthField.Value;
+            var Width = (int)WidthField.Value;
             var Stages = (int)StagesField.Value;
             var MaxAltitude = (int)AltitudeField.Value;
             var MaxLaunches = (int)LaunchesField.Value;
@@ -49,7 +49,7 @@ namespace space_bases
             var Engine2 = Engine2Field.Text;
             var Engine3 = Engine3Field.Text;
 
-            if(RocketName != "" && TrajectoryType != "" && Engine1 != "")
+            if (RocketName != "" && TrajectoryType != "" && Engine1 != "")
             {
                 // creating rocket
                 var rocket = new Rocket
@@ -95,7 +95,7 @@ namespace space_bases
 
                 try
                 {
-                    this.db.SaveChanges(); 
+                    this.db.SaveChanges();
                     this.Close();
                 }
                 catch (Exception ex)
@@ -120,6 +120,11 @@ namespace space_bases
         }
 
         private void TrajectoryField_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

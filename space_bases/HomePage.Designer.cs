@@ -46,6 +46,7 @@
             StatisticsGroupBox = new GroupBox();
             MostPopularRocketButton = new Button();
             AgencyPaidMostButton = new Button();
+            LogoutButton = new Button();
             ((System.ComponentModel.ISupportInitialize)OutputGrid).BeginInit();
             DiscoverGroupBox.SuspendLayout();
             DevelopGroupBox.SuspendLayout();
@@ -243,6 +244,16 @@
             AgencyPaidMostButton.UseVisualStyleBackColor = true;
             AgencyPaidMostButton.Click += AgencyPaidMostButton_Click;
             // 
+            // LogoutButton
+            // 
+            LogoutButton.Location = new Point(359, 63);
+            LogoutButton.Name = "LogoutButton";
+            LogoutButton.Size = new Size(83, 23);
+            LogoutButton.TabIndex = 12;
+            LogoutButton.Text = "Logout";
+            LogoutButton.UseVisualStyleBackColor = true;
+            LogoutButton.Click += LogoutButton_Click;
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -250,6 +261,7 @@
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(800, 450);
+            Controls.Add(LogoutButton);
             Controls.Add(StatisticsGroupBox);
             Controls.Add(LaunchesButton);
             Controls.Add(OutputGridLabel);
@@ -287,5 +299,6 @@
         private GroupBox StatisticsGroupBox;
         private Button MostPopularRocketButton;
         private Button AgencyPaidMostButton;
+        private Button LogoutButton;
     }
 }
