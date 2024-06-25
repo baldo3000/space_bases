@@ -23,7 +23,7 @@ public partial class Agency
 
     public string RepresentativeId { get; set; } = null!;
 
-    public virtual ICollection<Basis> Bases { get; set; } = new List<Basis>();
+    public virtual ICollection<Base> Bases { get; set; } = new List<Base>();
 
     public virtual ICollection<Engine> Engines { get; set; } = new List<Engine>();
 

@@ -22,5 +22,32 @@ namespace space_bases
             this.mainWindow = mainWindow;
             InitializeComponent();
         }
+
+        private void BasesButton_Click(object sender, EventArgs e)
+        {
+            var bases = this.db.Bases.ToList();
+            OutputGrid.DataSource = bases;
+        }
+
+        private void LaunchpadsButton_Click(object sender, EventArgs e)
+        {
+            var launchpads = this.db.Launchpads.ToList();
+            OutputGrid.DataSource = launchpads;
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            this.mainWindow.loadLoginPage();
+        }
+
+        private void CreateBaseButton_Click(object sender, EventArgs e)
+        {
+            this.mainWindow.loadInputDialog(new BaseInputDialog(this.db, this.mainWindow));
+        }
+
+        private void CreateLaunchpadButton_Click(object sender, EventArgs e)
+        {
+            this.mainWindow.loadInputDialog(new LaunchpadInputDialog(this.db, this.mainWindow));
+        }
     }
 }

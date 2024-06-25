@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace space_bases.SpaceBases;
 
-public partial class Basis
+public partial class Base
 {
     public string BaseName { get; set; } = null!;
 

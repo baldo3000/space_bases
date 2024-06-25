@@ -19,7 +19,7 @@ public partial class Launchpad
 
     public bool Active { get; set; }
 
-    public virtual Basis BaseNameNavigation { get; set; } = null!;
+    public virtual Base BaseNameNavigation { get; set; } = null!;
 
     public virtual ICollection<Launch> Launches { get; set; } = new List<Launch>();
 }

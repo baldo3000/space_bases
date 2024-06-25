@@ -17,7 +17,7 @@ public partial class SpaceBasesContext : DbContext
 
     public virtual DbSet<Agency> Agencies { get; set; }
 
-    public virtual DbSet<Basis> Bases { get; set; }
+    public virtual DbSet<Base> Bases { get; set; }
 
     public virtual DbSet<Engine> Engines { get; set; }
 
@@ -86,7 +86,7 @@ public partial class SpaceBasesContext : DbContext
                 .HasConstraintName("FKrepresentation");
         });
 
-        modelBuilder.Entity<Basis>(entity =>
+        modelBuilder.Entity<Base>(entity =>
         {
             entity.HasKey(e => e.BaseName).HasName("PRIMARY");
 

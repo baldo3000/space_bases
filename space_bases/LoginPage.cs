@@ -51,7 +51,7 @@ namespace space_bases
             }
             else
             {
-                MessageBox.Show("Credenziali errate.", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wrong credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
