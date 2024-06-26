@@ -170,6 +170,7 @@
             AdminPasswordField.Name = "AdminPasswordField";
             AdminPasswordField.Size = new Size(116, 23);
             AdminPasswordField.TabIndex = 1;
+            AdminPasswordField.UseSystemPasswordChar = true;
             // 
             // AdminPasswordLabel
             // 

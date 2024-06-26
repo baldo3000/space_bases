@@ -1,0 +1,2 @@
+Per inizializzare il database aprire XAMPP e far partire il database MySQL. Dopodichè inizializzare il database con le query contenute nel file DatabaseSetup.sql utilizzando MySQL Workbench.
+Per aprire l'applicazione aprire il file "space_bases.sln" con VisualStudio2022 e far partire la compilazione. La password di admin è "elonmusk".
