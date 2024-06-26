@@ -30,6 +30,8 @@ namespace space_bases
             MyEnginesButton.Enabled = true;
             MyProducedRocketsButton.Enabled = true;
             ProduceRocketButton.Enabled = true;
+            MostPopularRocketButton.Enabled = true;
+            AgencyPaidMostButton.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)

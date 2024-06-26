@@ -230,6 +230,7 @@
             // 
             // MostPopularRocketButton
             // 
+            MostPopularRocketButton.Enabled = false;
             MostPopularRocketButton.Location = new Point(6, 22);
             MostPopularRocketButton.Name = "MostPopularRocketButton";
             MostPopularRocketButton.Size = new Size(264, 23);
@@ -240,6 +241,7 @@
             // 
             // AgencyPaidMostButton
             // 
+            AgencyPaidMostButton.Enabled = false;
             AgencyPaidMostButton.Location = new Point(6, 64);
             AgencyPaidMostButton.Name = "AgencyPaidMostButton";
             AgencyPaidMostButton.Size = new Size(264, 23);

@@ -48,12 +48,18 @@
             AltitudeLabel = new Label();
             LaunchesLabel = new Label();
             TrajectoryLabel = new Label();
+            Engine1Counter = new NumericUpDown();
+            Engine3Counter = new NumericUpDown();
+            Engine2Counter = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)WeightField).BeginInit();
             ((System.ComponentModel.ISupportInitialize)HeightField).BeginInit();
             ((System.ComponentModel.ISupportInitialize)WidthField).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StagesField).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AltitudeField).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LaunchesField).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Engine1Counter).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Engine3Counter).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Engine2Counter).BeginInit();
             SuspendLayout();
             // 
             // RocketNameField
@@ -68,7 +74,7 @@
             Engine1Field.Location = new Point(234, 150);
             Engine1Field.Name = "Engine1Field";
             Engine1Field.PlaceholderText = "Engine 1 name";
-            Engine1Field.Size = new Size(120, 23);
+            Engine1Field.Size = new Size(89, 23);
             Engine1Field.TabIndex = 7;
             // 
             // Engine2Field
@@ -76,7 +82,7 @@
             Engine2Field.Location = new Point(235, 179);
             Engine2Field.Name = "Engine2Field";
             Engine2Field.PlaceholderText = "*Engine 2 name";
-            Engine2Field.Size = new Size(119, 23);
+            Engine2Field.Size = new Size(88, 23);
             Engine2Field.TabIndex = 8;
             // 
             // Engine3Field
@@ -84,7 +90,7 @@
             Engine3Field.Location = new Point(234, 205);
             Engine3Field.Name = "Engine3Field";
             Engine3Field.PlaceholderText = "*Engine 3 name";
-            Engine3Field.Size = new Size(120, 23);
+            Engine3Field.Size = new Size(89, 23);
             Engine3Field.TabIndex = 9;
             // 
             // WeightField
@@ -144,7 +150,7 @@
             TrajectoryField.Items.AddRange(new object[] { "orbital", "suborbital" });
             TrajectoryField.Location = new Point(235, 121);
             TrajectoryField.Name = "TrajectoryField";
-            TrajectoryField.Size = new Size(119, 23);
+            TrajectoryField.Size = new Size(120, 23);
             TrajectoryField.TabIndex = 17;
             TrajectoryField.SelectedIndexChanged += TrajectoryField_SelectedIndexChanged;
             // 
@@ -231,11 +237,44 @@
             TrajectoryLabel.TabIndex = 34;
             TrajectoryLabel.Text = "Trajectory type:";
             // 
+            // Engine1Counter
+            // 
+            Engine1Counter.Location = new Point(320, 150);
+            Engine1Counter.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
+            Engine1Counter.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            Engine1Counter.Name = "Engine1Counter";
+            Engine1Counter.Size = new Size(36, 23);
+            Engine1Counter.TabIndex = 35;
+            Engine1Counter.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // Engine3Counter
+            // 
+            Engine3Counter.Location = new Point(321, 205);
+            Engine3Counter.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
+            Engine3Counter.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            Engine3Counter.Name = "Engine3Counter";
+            Engine3Counter.Size = new Size(35, 23);
+            Engine3Counter.TabIndex = 36;
+            Engine3Counter.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // Engine2Counter
+            // 
+            Engine2Counter.Location = new Point(321, 179);
+            Engine2Counter.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
+            Engine2Counter.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            Engine2Counter.Name = "Engine2Counter";
+            Engine2Counter.Size = new Size(35, 23);
+            Engine2Counter.TabIndex = 37;
+            Engine2Counter.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
             // RocketInputDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 299);
+            Controls.Add(Engine2Counter);
+            Controls.Add(Engine3Counter);
+            Controls.Add(Engine1Counter);
             Controls.Add(TrajectoryLabel);
             Controls.Add(LaunchesLabel);
             Controls.Add(AltitudeLabel);
@@ -265,6 +304,9 @@
             ((System.ComponentModel.ISupportInitialize)StagesField).EndInit();
             ((System.ComponentModel.ISupportInitialize)AltitudeField).EndInit();
             ((System.ComponentModel.ISupportInitialize)LaunchesField).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Engine1Counter).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Engine3Counter).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Engine2Counter).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -293,5 +335,8 @@
         private Label AltitudeLabel;
         private Label LaunchesLabel;
         private Label TrajectoryLabel;
+        private NumericUpDown Engine1Counter;
+        private NumericUpDown Engine3Counter;
+        private NumericUpDown Engine2Counter;
     }
 }

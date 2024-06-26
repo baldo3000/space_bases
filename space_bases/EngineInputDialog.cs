@@ -53,6 +53,7 @@ namespace space_bases
                     this.db.SaveChanges();
                     this.mainWindow.IsSpaceAgency = true;
                     this.Close();
+                    this.mainWindow.loadHomePage();
                 }
                 catch (Exception ex)
                 {
