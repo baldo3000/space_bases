@@ -19,7 +19,7 @@ namespace space_bases
             Boolean connected = db.Database.CanConnect();
             if (!connected)
             {
-                MessageBox.Show("Impossibile instaurare la connessione.", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Can't connect to server", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(0);
             }
             else
