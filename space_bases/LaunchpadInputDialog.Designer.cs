@@ -145,7 +145,7 @@
             Controls.Add(BaseNameField);
             Name = "LaunchpadInputDialog";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LaunchpadInputDialog";
+            Text = "Create a new launchpad";
             ((System.ComponentModel.ISupportInitialize)LaunchpadCodeField).EndInit();
             ((System.ComponentModel.ISupportInitialize)WeightField).EndInit();
             ResumeLayout(false);

@@ -165,7 +165,7 @@
             Controls.Add(EngineNameField);
             Name = "EngineInputDialog";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "EngineInputDialog";
+            Text = "Develop an engine";
             ((System.ComponentModel.ISupportInitialize)PressureField).EndInit();
             ((System.ComponentModel.ISupportInitialize)ThrustField).EndInit();
             ResumeLayout(false);

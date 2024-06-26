@@ -258,7 +258,7 @@
             Controls.Add(RocketNameField);
             Name = "RocketInputDialog";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "RocketInputDialog";
+            Text = "Develop a new rocket";
             ((System.ComponentModel.ISupportInitialize)WeightField).EndInit();
             ((System.ComponentModel.ISupportInitialize)HeightField).EndInit();
             ((System.ComponentModel.ISupportInitialize)WidthField).EndInit();

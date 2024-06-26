@@ -186,7 +186,7 @@
             Controls.Add(RocketNameField);
             Name = "ScheduleLaunchInputDialog";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ScheduleLaunchInputDialog";
+            Text = "Schedule a new launch";
             ((System.ComponentModel.ISupportInitialize)SnField).EndInit();
             ((System.ComponentModel.ISupportInitialize)CostField).EndInit();
             ((System.ComponentModel.ISupportInitialize)AltitudeField).EndInit();

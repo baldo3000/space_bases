@@ -122,7 +122,7 @@
             Controls.Add(RocketNameField);
             Name = "BuyLaunchInputDialog";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "BuyLaunchInputDialog";
+            Text = "Buy a launch";
             ((System.ComponentModel.ISupportInitialize)SnField).EndInit();
             ((System.ComponentModel.ISupportInitialize)PayloadWeightField).EndInit();
             ResumeLayout(false);

@@ -149,7 +149,7 @@
             Controls.Add(NameField);
             Name = "BaseInputDialog";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "BaseInputDialog";
+            Text = "Create a new base";
             ResumeLayout(false);
             PerformLayout();
         }
